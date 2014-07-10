@@ -7,50 +7,53 @@
 	<script type="text/javascript" src="javascript.js"></script>
  </head>
  <body>
+	
 	<div>
-       <table border=1>
-          <tr>
-           <td>
-  	         <form NAME="Calculadora">
-  	            <input type="text" name="visor" maxlength="8" readonly="true" ><br>
+      <table border=1>
+        <tr>
+          <td>
+  	        <form NAME="Calculadora">
+	          <input type="text" name="visor" maxlength="8" readonly="true" ><br>
 
-                <input type="button" name="delete" value="CE" onclick="adicionaItem(Calculadora.visor.value);" />
-                <input type="button" name="deleteAll" value="C" onclick="" />
-				<input type="button" name="abre" value="(" onclick="concatenar(value);"/>
-				<input type="button" name="fecha" value=")" onclick="concatenar(value);"/><br>
+                <input type="button" name="delete" value="CE" onclick="removeLast();" />
+                <input type="button" name="deleteAll" value="C" onclick="location.reload();" />
+				<input type="button" name="abre" value="(" onclick="concatenar(value);" />
+				<input type="button" name="fecha" value=")" onclick="concatenar(value);" /><br>
 
 				<input type="button" name="sete" value="7" onclick="concatenar(value);" />
-				<input type="button" name="oito" value="8" onclick="concatenar(value);"/>
-				<input type="button" name="nove" value="9" onclick="concatenar(value);"/>
+				<input type="button" name="oito" value="8" onclick="concatenar(value);" />
+				<input type="button" name="nove" value="9" onclick="concatenar(value);" />
 
-				<input type="button" name="soma" value="+" onclick="concatenar(value);"/><br>
+				<input type="button" name="soma" value="+" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
 
-				<input type="button" name="quatro" value="4" onclick="concatenar(value);"/>
+				<input type="button" name="quatro" value="4" onclick="concatenar(value);" />
 				<input type="button" name="cinco" value="5" onclick="concatenar(value);" />
-				<input type="button" name="seis" value="6" onclick="concatenar(value);"/>
+				<input type="button" name="seis" value="6" onclick="concatenar(value);" />
 
-				<input type="button" name="subtrair" value="-" onclick="concatenar(value);"/><br>
+				<input type="button" name="subtrair" value="-" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
 
-				<input type="button" name="um" value="1" onclick="concatenar(value);"/>
-				<input type="button" name="dois" value="2" onclick="concatenar(value);"/>
-				<input type="button" name="tres" value="3" onclick="concatenar(value);"/>
+				<input type="button" name="um" value="1" onclick="concatenar(value);" />
+				<input type="button" name="dois" value="2" onclick="concatenar(value);" />
+				<input type="button" name="tres" value="3" onclick="concatenar(value);" />
 
-				<input type="button" name="multiplicar" value="*" onclick="concatenar(value);"/><br>
+				<input type="button" name="multiplicar" value="*" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
 
-				<input type="button" name="zero" value="0" onclick="concatenar(value);"/>
-				<input type="button" name="virgula" value="." onclick="concatenar(value);"/>
-				<input type="button" name="resultado" value="=" onclick="result();" />
-				<input type="button" name="dividir" value="/" onclick="concatenar(value);"/><br>
-	         </form>
-           </td>
-           <td>
-               <textarea name="campoTexto" readonly="true"></textarea>
-           </td>
-           <td>
-               <p></p>
-           </td>
-         </tr>
-       </table>    
- 	<div>
-  </body>
+				<input type="button" name="zero" value="0" onclick="concatenar(value);" />
+				<input type="button" name="virgula" value="." onclick="concatenar(value);" />
+				<input type="button" name="resultado" value="=" onclick="adicionaItem(Calculadora.visor.value);resultTotal();" />
+				<input type="button" name="dividir" value="/" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
+	        </form>
+          </td>
+          <td>
+                <textarea id="campoTexto" readonly="true"></textarea>
+          </td>
+          <td>
+		       <p id="demo">Grupo :        </p>
+               <p id="demo">        Klebson</p>
+			   <p id="demo">        Germán</p>
+          </td>
+        </tr>
+      </table>    
+	<div>
+ </body>
 </html>

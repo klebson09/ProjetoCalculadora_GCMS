@@ -5,35 +5,44 @@ function concatenar(numero){
   Calculadora.visor.value += numero;
 }
 
-function result(){
- Calculadora.visor.value = eval(Calculadora.visor.value);
+function resultTotal(){
+  var result = '';
+  
+  for (i = 0; i < itens.length; i++){
+     result = result + itens[i];
+  }
+  
+  Calculadora.visor.value = eval(result);
+}
+
+function removeLast(){
+  Calculadora.visor.value = "";
+  itens.splice(itens.length-1, 1);
+  index--;
+  getItensToString();
 }
 
 function adicionaItem(item) 
 {
-  itens[index] = {nomeItem : item};
+  if(item == ""){item=0;}
+  itens.push(item);
+  Calculadora.visor.value = "";
+  getItensToString();
   index++;
-}
-
-function concluirCompra() 
-{           
-  document.getElementByName("campoTexto").innerHTML=getItensToString();
 }
 
 function getItensToString()
 {
   var result  = '';
-  alert(itens);  
-
+  
   for (i = 0; i < itens.length; i++){
-     result = result + itens[i]['nomeItem'] + '\r\n';
-  }
-  return result;
+     result = result + itens[i] + '\r\n';
+  } 
+  document.getElementById("campoTexto").innerHTML = result;
 }
 
 
 function init() {
-  //var form = document.forms[0];
   Calculadora.visor.value = '';
 }
 onload = init;
