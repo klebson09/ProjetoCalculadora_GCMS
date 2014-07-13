@@ -4,6 +4,16 @@ input[type=button]{
   filter: blur;
 }
 
+tr{ 
+  height: 250px;
+  width: 200px;
+}
+
+textarea{
+  height: 250px;
+}
+
+
 div {
   left: 40%;
   width: 220px;
