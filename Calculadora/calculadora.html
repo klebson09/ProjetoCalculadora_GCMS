@@ -8,40 +8,40 @@
  </head>
  <body>
 	
-	<div>
+    <div>
       <table border=1>
         <tr>
           <td>
-  	        <form NAME="Calculadora">
+  	        <form name="Calculadora">
 	          <input type="text" name="visor" maxlength="8" readonly="true" ><br>
 
-                <input type="button" name="delete" value="CE" onclick="removeLast();" />
-                <input type="button" name="deleteAll" value="C" onclick="location.reload();" />
-				<input type="button" name="abre" value="(" onclick="concatenar(value);" />
-				<input type="button" name="fecha" value=")" onclick="concatenar(value);" /><br>
+                  <input type="button" name="delete" value="CE" onclick="removeLast();" />
+                  <input type="button" name="deleteAll" value="C" onclick="location.reload();" />
+		  <input type="button" name="abre" value="(" onclick="concatenar(value);" />
+		  <input type="button" name="fecha" value=")" onclick="concatenar(value);" /><br>
 
-				<input type="button" name="sete" value="7" onclick="concatenar(value);" />
-				<input type="button" name="oito" value="8" onclick="concatenar(value);" />
-				<input type="button" name="nove" value="9" onclick="concatenar(value);" />
+		  <input type="button" name="sete" value="7" onclick="concatenar(value);" />
+		  <input type="button" name="oito" value="8" onclick="concatenar(value);" />
+		  <input type="button" name="nove" value="9" onclick="concatenar(value);" />
 
-				<input type="button" name="soma" value="+" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
+        	  <input type="button" name="soma" value="+" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
 
-				<input type="button" name="quatro" value="4" onclick="concatenar(value);" />
-				<input type="button" name="cinco" value="5" onclick="concatenar(value);" />
-				<input type="button" name="seis" value="6" onclick="concatenar(value);" />
+		  <input type="button" name="quatro" value="4" onclick="concatenar(value);" />
+		  <input type="button" name="cinco" value="5" onclick="concatenar(value);" />
+		  <input type="button" name="seis" value="6" onclick="concatenar(value);" />
 
-				<input type="button" name="subtrair" value="-" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
+		  <input type="button" name="subtrair" value="-" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
 
-				<input type="button" name="um" value="1" onclick="concatenar(value);" />
-				<input type="button" name="dois" value="2" onclick="concatenar(value);" />
-				<input type="button" name="tres" value="3" onclick="concatenar(value);" />
+		  <input type="button" name="um" value="1" onclick="concatenar(value);" />
+		  <input type="button" name="dois" value="2" onclick="concatenar(value);" />
+		  <input type="button" name="tres" value="3" onclick="concatenar(value);" />
 
-				<input type="button" name="multiplicar" value="*" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
+		  <input type="button" name="multiplicar" value="*" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
 
-				<input type="button" name="zero" value="0" onclick="concatenar(value);" />
-				<input type="button" name="virgula" value="." onclick="concatenar(value);" />
-				<input type="button" name="resultado" value="=" onclick="adicionaItem(Calculadora.visor.value);resultTotal();" />
-				<input type="button" name="dividir" value="/" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
+		  <input type="button" name="zero" value="0" onclick="concatenar(value);" />
+		  <input type="button" name="virgula" value="." onclick="concatenar(value);" />
+		  <input type="button" name="resultado" value="=" onclick="adicionaItem(Calculadora.visor.value);resultTotal();" />
+		  <input type="button" name="dividir" value="/" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
 	        </form>
           </td>
           <td>
@@ -53,7 +53,30 @@
 			   <p id="demo">        Germán</p>
           </td>
         </tr>
+
+        <tr class="imagem" align=center >
+           <td colspan="3"><input type="button" value="-" onclick="lowTemperature();" />
+                Conversor de Temperatura
+                <input type="button" value="+" onclick="addTemperature();" /></td>
+        </tr>
+        
+        <tr class="imagem">
+           <td><input type="text" name="kvisor" class="tvisor" value="273 ºK" readonly="true" /></td>
+           <td colspan="2"><img src="Kelvin.png" id="kimg" /></td>      
+        </tr>
+
+        <tr class="imagem">
+           <td><input type="text" name="cvisor" class="tvisor" value="0 ºC" readonly="true" /></td>
+           <td colspan="2"><img src="celsius.png" id="cimg" /></td>           
+        </tr>
+    
+        <tr class="imagem">
+           <td><input type="text" name="fvisor" class="tvisor" value="212 ºF" readonly="true" /></td>
+           <td colspan="2"><img src="Fahrenheit.png" id="fimg" /></td>          
+        </tr>
+        
+        
       </table>    
-	<div>
+    <div>
  </body>
 </html>

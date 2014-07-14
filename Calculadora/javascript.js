@@ -1,5 +1,36 @@
 var itens = new Array();
-var index = 0;
+var index = 0,k=273,c=0,f=32;
+
+function lowTemperature(){
+  
+  if(c==0){
+    alert("Chegou no limite inferior");
+  }else{
+     k-=1;
+     c-=1;
+     f-=1.8;
+  
+     document.getElementById("kimg").width= k;
+     document.getElementById("cimg").width= c;
+     document.getElementById("fimg").width= f;
+  }
+}
+
+function addTemperature(){
+  
+  if(c==100){
+    alert("Chegou no limite superior");
+  }else{
+     k+=1;
+     c+=1;
+     f+=1.8;
+  
+     document.getElementById("kimg").width= k;
+     document.getElementById("cimg").width= c;
+     document.getElementById("fimg").width= f;
+  }
+}
+
 
 function concatenar(numero){
   Calculadora.visor.value += numero;
@@ -42,7 +73,13 @@ function getItensToString()
 }
 
 
-function init() {
-  Calculadora.visor.value = '';
+function init(){ 
+  Calculadora.visor.value = "";
+  document.getElementById("kimg").height="10";
+  document.getElementById("kimg").width=k;
+  document.getElementById("cimg").height="10";
+  document.getElementById("cimg").width=c;
+  document.getElementById("fimg").height="10";
+  document.getElementById("fimg").width=f;
 }
 onload = init;
