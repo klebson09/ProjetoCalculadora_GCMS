@@ -13,10 +13,8 @@ textarea{
   height: 250px;
 }
 
-
 div {
-  left: 40%;
-  width: 220px;
+  left: 25%; 
   position: relative;
 }
 
@@ -26,5 +24,7 @@ form{
 
 input[type=text]{
   color: blue;
+  width: 200px;
   font-weight : bolder;
 }
+
