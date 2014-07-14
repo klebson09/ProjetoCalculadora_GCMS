@@ -14,13 +14,12 @@ tr{
 }
 
 .tvisor{
-  height: 10px;
+  height: 20px;
   text-align: center;
 }
 
-#kimg{
-  //width: 100px;//Comprimento ou Largura
-  //height:20px;
+#calcular,#BTNcal{
+  width: 60px;//Comprimento ou Largura
 }
 
 
@@ -37,8 +36,8 @@ table{
   width: 70%;
 }
 
-form{
-  background-color: black;
+#first{
+  background-color: #FFFF00;
 }
 
 input[type=text]{
