@@ -9,17 +9,36 @@ tr{
   width: 200px;
 }
 
+.imagem{ 
+  height: 30px;
+}
+
+.tvisor{
+  height: 10px;
+  text-align: center;
+}
+
+#kimg{
+  //width: 100px;//Comprimento ou Largura
+  //height:20px;
+}
+
+
 textarea{
   height: 250px;
 }
 
-div {
-  left: 25%; 
+div{
+  left: 15%; 
   position: relative;
 }
 
+table{
+  width: 70%;
+}
+
 form{
-  background-color: blue;
+  background-color: black;
 }
 
 input[type=text]{
