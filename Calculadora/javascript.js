@@ -105,6 +105,13 @@ function resultTotal(){
   Calculadora.visor.value = eval(result);
 }
 
+function restart(){
+  for (i = 0; i <= index; i++){
+    itens.splice(itens.length-1, 1); 
+  }
+  index=0;  
+}
+
 function removeLast(){
   Calculadora.visor.value = "";
   itens.splice(itens.length-1, 1);
