@@ -4,16 +4,16 @@
 	
 	<title>Calculadora</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 	<script type="text/javascript" src="javascript.js"></script>
  </head>
  <body>
-	
-    <div>
-      <table border=1>
-        <tr id="first">
-          <td>
-  	        <form name="Calculadora">
-	          <input type="text" name="visor" maxlength="8" readonly="true" ><br>
+    <div id="Bloco01">
+	   <table border=1>
+	      <tr id="BL01">
+		      <td>
+                <form name="Calculadora">
+	              <input type="text" name="visor" maxlength="8" readonly="true" ><br>
 
                   <input type="button" name="delete" value="CE" onclick="removeLast();" />
                   <input type="button" name="deleteAll" value="C" onclick="location.reload();" />
@@ -24,7 +24,7 @@
 				  <input type="button" name="oito" value="8" onclick="concatenar(value);" />
 				  <input type="button" name="nove" value="9" onclick="concatenar(value);" />
 
-					  <input type="button" name="soma" value="+" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
+			      <input type="button" name="soma" value="+" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
 
 				  <input type="button" name="quatro" value="4" onclick="concatenar(value);" />
 				  <input type="button" name="cinco" value="5" onclick="concatenar(value);" />
@@ -40,54 +40,76 @@
 
 				  <input type="button" name="zero" value="0" onclick="concatenar(value);" />
 				  <input type="button" name="virgula" value="." onclick="concatenar(value);" />
-				  <input type="button" name="resultado" value="=" onclick="adicionaItem(Calculadora.visor.value);resultTotal();restart();" />
+				  <input type="button" name="resultado" value="=" onclick="adicionaItem(Calculadora.visor.value);resultTotal();" />
 				  <input type="button" name="dividir" value="/" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
-	        </form>
-          </td>
-          <td>
-               <textarea id="campoTexto" readonly="true"></textarea>
-          </td>
-          <td>
-		       <p id="demo">Grupo :        </p>
-               <p id="demo">        Klebson</p>
-			   <p id="demo">        Germán</p>
-			   <p id="demo">        Tássio</p>
-			   <p id="demo">        Anderson</p>
-			   <p id="demo">        Ronaldo</p>
-          </td>
-        </tr>
-
+	            </form>
+               </td>
+               <td><textarea id="campoTexto" readonly="true"></textarea></td>
+		   </tr>
+		</table>
+     </div>
+	 <p><a href="#" id="cal">CALCULADORA</a></p> 
+            
+    <div id="Bloco02">
+	  <table border=1>
         <tr class="imagem" align=center >
-           <td colspan="3"><input type="button" value="-" onclick="lowTemperature();" />
-                Conversor de Temperatura
-                <input type="button" value="+" onclick="addTemperature();" />
+           <td colspan="3">
+		     
+				<input type="range" name="temp" min="0" max="100" id="temp" value="100" onclick="calcularTemp(2);" />
+				
 				<input type="text" id="calcular" />
 				<select id="selecionar">
 					<option value="K">ºK</option>
 					<option value="C">ºC</option>
 					<option value="F">ºF</option>
                 </select>
-                <input type="button" id="BTNcal" value="Calcular"  onclick="calcularTemp();" />				
-				</td>
+                <input type="button" id="BTNcal" value="Calcular"  onclick="calcularTemp(1);" />				
+			</td>
         </tr>
         
         <tr class="imagem">
            <td><input type="text" id="kvisor" name="kvisor" class="tvisor" readonly="true" />ºK</td>
-           <td colspan="2"><img src="Kelvin.png" id="kimg" /></td>      
+		   <td><input type="text" id="cvisor" name="cvisor" class="tvisor" readonly="true" />ºC</td>
+		   <td><input type="text" id="fvisor" name="fvisor" class="tvisor" readonly="true" />ºF</td>     
         </tr>
-
-        <tr class="imagem">
-           <td><input type="text" id="cvisor" name="cvisor" class="tvisor" readonly="true" />ºC</td>
-           <td colspan="2"><img src="celsius.png" id="cimg" /></td>           
-        </tr>
-    
-        <tr class="imagem">
-           <td><input type="text" id="fvisor" name="fvisor" class="tvisor" readonly="true" />ºF</td>
-           <td colspan="2"><img src="Fahrenheit.png" id="fimg" /></td>          
-        </tr>
-        
-        
       </table>    
-    <div>
+    </div>
+	<p><a href="#" id="con">CONVERSOR DE TEMPERATURA</a></p> 
+	
+    <div id="Bloco03">
+	  <table>
+	     <tr>
+		   <td colspan="3">
+			   <canvas id="pizza" width="400" height="400">
+				  Seu browser não suporta canvas
+			   </canvas>
+		   </td>
+		 </tr>
+		 
+		 <tr>
+		   <td colspan="3">
+		     <input type="range" name="fatia" min="0" max="360" id="fatia" value="360" onclick="arco();" />
+		   </td>
+         </tr>
+
+         <tr>
+            <td><input type="text" id="grauvisor" name="" class="" readonly="true" />graus</td>
+		    <td><input type="text" id="pivisor" name="" class="" readonly="true" />radianos</td>
+		    <td><input type="text" id="gradovisor" name="" class="" readonly="true" />grados</td>     
+         </tr>		 
+			 
+      </table>
+	</div>
+	<p><a href="#" id="ca">CONVERSOR DE ÂNGULO</a></p>
+	
+	<div id="Bloco04">
+           <p id="demo">        Klebson</p>
+		   <p id="demo">        Germán</p>
+		   <p id="demo">        Tássio</p>
+		   <p id="demo">        Anderson</p>
+		   <p id="demo">        Ronaldo</p>
+    </div> 
+	<p><a href="#" id="gp">INTEGRANTES</a></p>
+	
  </body>
 </html>
