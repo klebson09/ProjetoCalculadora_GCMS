@@ -4,45 +4,34 @@ input[type=button]{
   filter: blur;
 }
 
-tr{ 
+#BL01{/*Seletor de Id*/ 
   height: 250px;
-  width: 200px;
 }
 
-.imagem{ 
-  height: 30px;
+.imagem{/*Seletor de Classe*/ 
+  height: 40px;
 }
 
-.tvisor{
+#calcular,#BTNcal{/*Seletor de Id*/
+  width: 60px;/*Comprimento ou Largura*/
+}
+
+img{
   height: 20px;
-  text-align: center;
 }
-
-#calcular,#BTNcal{
-  width: 60px;//Comprimento ou Largura
-}
-
 
 textarea{
   height: 250px;
 }
 
-div{
-  left: 15%; 
+div{/*Seletor de tag*/
+  width: 100%;
+  /*left: 20%;*/ 
   position: relative;
 }
 
 table{
-  width: 70%;
+  width: 50%;
 }
 
 #first{
-  background-color: #FFFF00;
-}
-
-input[type=text]{
-  color: blue;
-  width: 200px;
-  font-weight : bolder;
-}
-
