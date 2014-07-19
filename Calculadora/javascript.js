@@ -1,12 +1,16 @@
+
 var itens = new Array();
 var index = 0,k=373,c=100,f=212;
 var ca = false;
 var co = false;
 var g = false;
 var c = false;
+var parcial=0;
+var sinal = true;//Se o antecessor é sinal ou número
 
+/*Geral*/
 $(document).ready(function(){
-   
+
   $("#cal").click(function(event){
     event.preventDefault();
     if(ca){
@@ -53,6 +57,8 @@ $(document).ready(function(){
   
 });
 
+
+/*Conversor de Temperatura*/
 function calcularTemp(tipo){
 
     if(tipo == 1){
@@ -120,20 +126,39 @@ function calcularTemp(tipo){
    alert("Valor Inválido");  
 }
 
+
+/*Calculadora*/
 function concatenar(numero){
   Calculadora.visor.value += numero;
 }
 
+/*Calculadora*/
 function resultTotal(){
   var result = '';
   
-  for (i = 0; i < itens.length; i++){
+  if(sinal){
+    for (i = 0; i < itens.length-1; i++){
      result = result + itens[i];
+    }
+	result = eval(result); 	
+	Calculadora.visor.value =eval(result + itens[itens.length-1] + result); 
+  }else{
+    for (i = 0; i < itens.length; i++){
+     result = result + itens[i];
+    }
+	Calculadora.visor.value = eval(result);
   }
-  
-  Calculadora.visor.value = eval(result);
 }
 
+/*Calculadora*/
+function restart(){
+  for (i = 0; i <= index; i++){
+    itens.splice(itens.length-1, 1); 
+  }
+  index=0;  
+}
+
+/*Calculadora*/
 function removeLast(){
   Calculadora.visor.value = "";
   itens.splice(itens.length-1, 1);
@@ -141,15 +166,34 @@ function removeLast(){
   getItensToString();
 }
 
+/*Calculadora*/
 function adicionaItem(item) 
 {
-  if(item == ""){item=0;}
-  itens.push(item);
-  Calculadora.visor.value = "";
-  getItensToString();
-  index++;
+  if(item == ""){
+     return;
+  }else{
+  
+    if((item == "+" || item == "-" || item == "*" || item == "/")  && sinal)
+    {
+ 	  removeLast();	  
+    }
+	
+	if(item != "+" && item != "-" && item != "*" && item != "/" && sinal == false)
+	{
+	  removeLast();
+	}
+	
+	if(item == "+" || item == "-" || item == "*" || item == "/")
+	{sinal = true;}else{sinal = false;}
+     
+    itens.push(item);
+    Calculadora.visor.value = "";
+    getItensToString();
+    index++;
+  }
 }
 
+/*Calculadora*/
 function getItensToString()
 {
   var result  = '';
@@ -160,7 +204,7 @@ function getItensToString()
   document.getElementById("campoTexto").innerHTML = result;
 }
 
-
+/*Conversor de Ângulo*/
 function arco(){
 var c = document.getElementById("pizza");
 var largura = c.attributes.getNamedItem("width").value;
@@ -192,6 +236,17 @@ function init(){
   $("#Bloco02").hide();
   $("#Bloco03").hide();
   $("#Bloco04").hide();
+
+  $("#cal").hide();
+  $("#con").hide();
+  $("#ca").hide();
+  $("#gp").hide();
+  $("#t1").slideUp(4500);
+  $("#cal").fadeIn(2000);
+  $("#con").fadeIn(3000);
+  $("#ca").fadeIn(4000);
+  $("#gp").fadeIn(4500);
+  
   arco();
   Calculadora.visor.value = "";
   document.getElementById("kimg").height="10";
@@ -206,4 +261,6 @@ function init(){
   document.getElementById("fvisor").value = f;
 }
 onload = init;
+
+
 

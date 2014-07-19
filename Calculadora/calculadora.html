@@ -8,7 +8,12 @@
 	<script type="text/javascript" src="javascript.js"></script>
  </head>
  <body>
-    <div id="Bloco01">
+   <div id="geral">
+    <div>
+	   <h1 id="t1">CALCULADORA F.O.D.A</h1>
+	</div>
+ 
+    <div id="Bloco01" class="blocos">
 	   <table border=1>
 	      <tr id="BL01">
 		      <td>
@@ -40,7 +45,7 @@
 
 				  <input type="button" name="zero" value="0" onclick="concatenar(value);" />
 				  <input type="button" name="virgula" value="." onclick="concatenar(value);" />
-				  <input type="button" name="resultado" value="=" onclick="adicionaItem(Calculadora.visor.value);resultTotal();" />
+				  <input type="button" name="resultado" value="=" onclick="adicionaItem(Calculadora.visor.value);resultTotal();restart();" />
 				  <input type="button" name="dividir" value="/" onclick="adicionaItem(Calculadora.visor.value);adicionaItem(value);" /><br>
 	            </form>
                </td>
@@ -48,9 +53,9 @@
 		   </tr>
 		</table>
      </div>
-	 <p><a href="#" id="cal">CALCULADORA</a></p> 
+	<img id="cal" class="icones" src="calculadora.png" alt="CALCULADORA" title="Calculadora">
             
-    <div id="Bloco02">
+    <div id="Bloco02" class="blocos">
 	  <table border=1>
         <tr class="imagem" align=center >
            <td colspan="3">
@@ -74,9 +79,9 @@
         </tr>
       </table>    
     </div>
-	<p><a href="#" id="con">CONVERSOR DE TEMPERATURA</a></p> 
+	<img id="con" class="icones" src="termo.png" alt="TEMPERATURA" title="Conversor de Temperatura"> 
 	
-    <div id="Bloco03">
+    <div id="Bloco03" class="blocos">
 	  <table>
 	     <tr>
 		   <td colspan="3">
@@ -100,16 +105,16 @@
 			 
       </table>
 	</div>
-	<p><a href="#" id="ca">CONVERSOR DE ÂNGULO</a></p>
+	<img id="ca" class="icones" src="angulo.png" alt="ANGULO" title="Conversor de Ângulo">
 	
-	<div id="Bloco04">
-           <p id="demo">        Klebson</p>
-		   <p id="demo">        Germán</p>
-		   <p id="demo">        Tássio</p>
-		   <p id="demo">        Anderson</p>
-		   <p id="demo">        Ronaldo</p>
+	<div id="Bloco04" class="blocos">
+           <h2 id="demo">        Klebson</h2>
+		   <h2 id="demo">        Germán</h2>
+		   <h2 id="demo">        Tássio</h2>
+		   <h2 id="demo">        Anderson</h2>
+		   <h2 id="demo">        Ronaldo</h2>
     </div> 
-	<p><a href="#" id="gp">INTEGRANTES</a></p>
-	
+	<img id="gp" class="icones" src="grupo.png" alt="TEMPERATURA"  title="Grupo">
+   </div>
  </body>
 </html>

@@ -4,6 +4,10 @@ input[type=button]{
   filter: blur;
 }
 
+h1{
+  font-size: 600%;
+}
+
 #BL01{/*Seletor de Id*/ 
   height: 250px;
 }
@@ -24,10 +28,8 @@ textarea{
   height: 250px;
 }
 
-div{/*Seletor de tag*/
-  width: 100%;
-  /*left: 20%;*/ 
-  position: relative;
+.blocos{
+  width: 160%; 
 }
 
 table{
@@ -35,3 +37,44 @@ table{
 }
 
 #first{
+  background-color: #FFFF00;
+}
+
+input[type=text]{
+  color: blue;
+  width: 200px;
+  font-weight : bolder;
+}
+
+#geral{
+  position: absolute; 
+  left: 5%; /* posiciona para a esquerda */ 
+  top: 10%; /* posiciona para baixo */
+}
+
+body{
+   background:url('Background.png');
+   background-size: 100%;
+   background-repeat: no-repeat;
+}
+
+.icones{
+  width: 150px;
+  height: 150px;
+  -webkit-transition-duration: .90s;
+}
+
+.icones:hover {
+   cursor: pointer; 
+
+  -webkit-transition-duration: .90s;
+  -webkit-filter: sepia(100%);
+  
+  -webkit-transform: scale(1.5);
+  -webkit-transform-origin: 50% 50%;
+  -o-transform: scale(1.5);
+  -o-transform-origin: 50% 50% 0;
+  transform: scale(1.5);
+  transform-origin: 50% 50% 0;
+}
+
