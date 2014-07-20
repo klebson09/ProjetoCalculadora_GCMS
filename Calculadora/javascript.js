@@ -159,7 +159,16 @@ function restart(){
 }
 
 /*Calculadora*/
-function removeLast(){
+function removeLast(CE){
+  
+  if(CE="CE"){
+    if(sinal){
+	   sinal=false;
+	}else{
+	   sinal=true;
+	}
+  }
+
   Calculadora.visor.value = "";
   itens.splice(itens.length-1, 1);
   index--;
@@ -173,11 +182,13 @@ function adicionaItem(item)
      return;
   }else{
   
+    /*Remove o Sinal para substituir*/
     if((item == "+" || item == "-" || item == "*" || item == "/")  && sinal)
     {
  	  removeLast();	  
     }
 	
+	/*Remove o Número para substituir*/
 	if(item != "+" && item != "-" && item != "*" && item != "/" && sinal == false)
 	{
 	  removeLast();
